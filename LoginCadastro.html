@@ -125,12 +125,22 @@
 		.form-control {
 			flex-basis: 50% !important;
 		}
+
+	body{
+
+	background-image:url('images/hero_1.jpg');
+	background-size: cover;
+	}
+
+
 	</style>
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
+
+
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
@@ -149,11 +159,11 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="login-form" action="https://phpoll.com/login/process" method="post"
+								<form id="login-form" action="formCadastro.php" method="post"
 									role="form" style="display: block;">
 									<div class="form-group">
 										<input type="text" name="username" id="username" tabindex="1"
-											class="form-control" placeholder="Nome" value="">
+											class="form-control" placeholder="Nome" value="" required>
 									</div>
 									<div class="form-group">
 										<input type="password" name="password" id="password" tabindex="2"
@@ -173,7 +183,7 @@
 									</div>
 								</form>
 
-								<form id="register-form" action="https://phpoll.com/register/process" method="post"
+								<form id="register-form" action="formCadastro.php" method="post"
 									role="form" style="display: none;">
 									<div class="form-group col-md-12">
 										<input type="text" name="username" id="username" tabindex="1"
@@ -195,15 +205,11 @@
 										<input type="text" name="cnpj" id="cnpj" tabindex="2" class="form-control"
 											placeholder="CNPJ">
 									</div>
-									<div class="form-group col-md-8">
-										<input type="text" name="cidade" id="cidade" tabindex="2" class="form-control"
-											placeholder="Cidade">
-
+									<div class="form-group col-md-12">
+										<input type="text" name="razao" id="razao" tabindex="2" class="form-control"
+											placeholder="Razão">
 									</div>
-									<div class="form-group col-md-4">
-										<input type="text" name="estado" id="estado" tabindex="2" class="form-control"
-											placeholder="Estado">
-									</div>
+									
 
 
 
