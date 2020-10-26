@@ -7,7 +7,7 @@
 <head>
 	<meta charset="utf-8">
 	<!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
-	<title>Opções de Usuario</title>
+	<title>Seus Pedidos</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
 	<style type="text/css">
@@ -143,29 +143,12 @@
 	<script>
 		$(function(){
 			$("#sairDaq").on("click", function(){
-				window.location.href = "index.html";
+				window.location.href = "PosLogin.php";
 			});
 		});
 
     </script>
     
-    <script>
-		$(function(){
-			$("#cadPedidos").on("click", function(){
-				window.location.href = "FazerPedido.html";
-			});
-		});
-
-	</script>
-	
-	<script>
-		$(function(){
-			$("#seusPedidos").on("click", function(){
-				window.location.href = "VerPedidos.html";
-			});
-		});
-
-    </script>
     
 </head>
 
@@ -179,7 +162,7 @@
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col">
-								<a href="#" class="active" id="login-form-link">Opções</a>
+								<a href="#" class="active" id="login-form-link">Seus Pedidos</a>
 							</div>
 						</div>
 						<hr>
@@ -187,34 +170,23 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="login-form" action = "logout.php" method='post'
+								<form id="login-form" action = "PosLogin.php" method='post'
 									role="form" style="display: block;">
 					
+								
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-10 col-sm-offset-1">						
+												<label for="" class="col-sm-10 col-sm-offset-3">Nenhum Pedido Encontrado</label>
+											</div>
+										</div>
+									</div>
 
-
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-sm-8 col-sm-offset-2">
-                                            <input type='button' name="cadPedidos" id="cadPedidos"
-                                            class="form-control btn btn-login" value="Cadastrar Pedidos">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-sm-8 col-sm-offset-2">
-                                            <input type="button" name="seusPedidos" id="seusPedidos" tabindex="4"
-                                                class="form-control btn btn-login" value="Seus Pedidos">
-                                        </div>
-                                    </div>
-                                </div>
-                                
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-sm-8 col-sm-offset-2">
                                             
-											<input type="submit" value='SAIR' class="form-control btn btn-login">
+											<input type="submit" value='Voltar' id="sairDaq"class="form-control btn btn-login">
                                         </div>
                                     </div>
                                 </div>
