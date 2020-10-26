@@ -1,10 +1,17 @@
+<?php
+    session_start();
+    if(isset($_SESSION['username'])){
+      header('Location: PosLogin.php');
+      exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 	<meta charset="utf-8">
 	<!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
-	<title>Fazer Pedido</title>
+	<title>Login/Cadastro</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
 	<style type="text/css">
@@ -133,18 +140,9 @@
 	}
 
 
-
 	</style>
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-	<script>
-		$(function(){
-			$("#sairDaq").on("click", function(){
-				window.location.href = "PosLogin.php";
-			});
-		});
-
-	</script>
 </head>
 
 <body>
@@ -156,8 +154,11 @@
 				<div class="panel panel-login">
 					<div class="panel-heading">
 						<div class="row">
-							<div class="col">
-								<a href="#" class="active" id="login-form-link">Cadastro de Pedidos</a>
+							<div class="col-xs-6">
+								<a href="#" class="active" id="login-form-link">Login</a>
+							</div>
+							<div class="col-xs-6">
+								<a href="#" id="register-form-link">Cadastrar</a>
 							</div>
 						</div>
 						<hr>
@@ -165,47 +166,93 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="login-form" action="formCadastro.php" method="post"
+								<form id="login-form" action="login2.php" method="post"
 									role="form" style="display: block;">
 									<div class="form-group">
-										<textarea type="text" name="Pedido" id="pedido" tabindex="1"
-											class="form-control" placeholder="Pedido" value=""></textarea>
+										<input type="text" name="username" id="username" tabindex="1"
+											class="form-control" placeholder="Nome" value="" required>
 									</div>
-
-						
 									<div class="form-group">
-										<div class='row'>
-											<div class="col-sm-6 col-sm-offset-0">
-												<label for="avatar">Escolha uma imagem:</label>
-												<input type="file" id="avatar" name="imagem" id="imagem"  
-												accept="image/png, image/jpeg" tabindex="4" >
-												
-											</div>		
+										<input type="password" name="password" id="password" tabindex="2"
+											class="form-control" placeholder="Senha">
+									</div>
+									<div class="form-group text-center">
+										<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+										<label for="remember"> Lembre-se de mim</label>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<input type="submit" name="login-submit" id="login-submit" tabindex="4"
+													class="form-control btn btn-login" value="Login">
+											</div>
 										</div>
-										<hr>   
+									</div>
+								</form>
+
+								<form id="register-form" action="formCadastro.php" method="post"
+									role="form" style="display: none;">
+									<div class="form-group col-md-12">
+										<input type="text" name="username" id="username" tabindex="1"
+											class="form-control" placeholder="Nome da instituição" value="">
+									</div>
+									<div class="form-group col-md-12">
+										<input type="email" name="email" id="email" tabindex="1" class="form-control"
+											placeholder="Email" value="">
+									</div>
+									<div class="form-group col-md-12">
+										<input type="password" name="password" id="password" tabindex="2"
+											class="form-control" placeholder="Senha">
+									</div>
+									<div class="form-group col-md-12">
+										<input type="password" name="confirm-password" id="confirm-password"
+											tabindex="2" class="form-control" placeholder="Confirmar senha">
+									</div>
+									<div class="form-group col-md-12">
+										<input type="text" name="cnpj" id="cnpj" tabindex="2" class="form-control"
+											placeholder="CNPJ">
+									</div>
+									<div class="form-group col-md-8">
+										<input type="text" name="rua" id="rua" tabindex="2" class="form-control"
+											placeholder="Rua">
+									</div>
+									<div class="form-group col-md-4">
+										<input type="text" name="cep" id="cep" tabindex="2" class="form-control"
+											placeholder="CEP">
+									</div>
+									<div class="form-group col-md-8">
+                                        <input type="text" name="cidade" id="cidade" tabindex="2" class="form-control"
+                                            placeholder="Cidade">
+
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <input type="text" name="estado" id="estado" tabindex="2" class="form-control"
+                                            placeholder="Estado">
 									</div>
 
-							</div>
-
-
-								<div class="form-group">
-									<div class="row">
-
-										<div class="col-sm-4 col-sm-offset-1">
-											<input type='button' name="sairDaq" id="sairDaq"
-												class="form-control btn btn-login" value="Voltar">
-										</div>
-
-
-										<div class="col-sm-4 col-sm-offset-2">
-											<input type="submit" name="enviaPedido" id="enviaPedido" tabindex="4"
-												class="form-control btn btn-login" value="Enviar Pedido">
-										</div>
-
+									<div class="form-group col-md-4">
+										<input type="text" name="telefone" id="telefone" tabindex="2" class="form-control"
+											placeholder="Telefone">
 									</div>
-								</div>
+									
+									<div class="form-group col-md-8">
+										<input type="text" name="razao" id="razao" tabindex="2" class="form-control"
+											placeholder="Razão">
+									</div>
+									
 
-								
+
+
+
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<input type="submit" name="register-submit" id="register-submit"
+													tabindex="4" class="form-control btn btn-register"
+													value="Cadastre-se">
+											</div>
+										</div>
+									</div>
 								</form>
 							</div>
 						</div>
@@ -214,8 +261,6 @@
 			</div>
 		</div>
 	</div>
-
-
 	<script type="text/javascript">
 		$(function () {
 						console.log(location.search);

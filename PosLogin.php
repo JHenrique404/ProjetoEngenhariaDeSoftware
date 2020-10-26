@@ -1,10 +1,13 @@
+<?php
+	include('verificacao.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 	<meta charset="utf-8">
 	<!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
-	<title>Fazer Pedido</title>
+	<title>Opções de Usuario</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
 	<style type="text/css">
@@ -140,11 +143,21 @@
 	<script>
 		$(function(){
 			$("#sairDaq").on("click", function(){
-				window.location.href = "PosLogin.php";
+				window.location.href = "index.html";
 			});
 		});
 
-	</script>
+    </script>
+    
+    <script>
+		$(function(){
+			$("#cadPedidos").on("click", function(){
+				window.location.href = "FazerPedido.html";
+			});
+		});
+
+    </script>
+    
 </head>
 
 <body>
@@ -157,7 +170,7 @@
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col">
-								<a href="#" class="active" id="login-form-link">Cadastro de Pedidos</a>
+								<a href="#" class="active" id="login-form-link">Opções</a>
 							</div>
 						</div>
 						<hr>
@@ -165,45 +178,37 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="login-form" action="formCadastro.php" method="post"
+								<form id="login-form" action = "logout.php" method='post'
 									role="form" style="display: block;">
-									<div class="form-group">
-										<textarea type="text" name="Pedido" id="pedido" tabindex="1"
-											class="form-control" placeholder="Pedido" value=""></textarea>
-									</div>
-
-						
-									<div class="form-group">
-										<div class='row'>
-											<div class="col-sm-6 col-sm-offset-0">
-												<label for="avatar">Escolha uma imagem:</label>
-												<input type="file" id="avatar" name="imagem" id="imagem"  
-												accept="image/png, image/jpeg" tabindex="4" >
-												
-											</div>		
-										</div>
-										<hr>   
-									</div>
-
-							</div>
+					
 
 
-								<div class="form-group">
-									<div class="row">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-8 col-sm-offset-2">
+                                            <input type='button' name="cadPedidos" id="cadPedidos"
+                                            class="form-control btn btn-login" value="Cadastrar Pedidos">
+                                        </div>
+                                    </div>
+                                </div>
 
-										<div class="col-sm-4 col-sm-offset-1">
-											<input type='button' name="sairDaq" id="sairDaq"
-												class="form-control btn btn-login" value="Voltar">
-										</div>
-
-
-										<div class="col-sm-4 col-sm-offset-2">
-											<input type="submit" name="enviaPedido" id="enviaPedido" tabindex="4"
-												class="form-control btn btn-login" value="Enviar Pedido">
-										</div>
-
-									</div>
-								</div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-8 col-sm-offset-2">
+                                            <input type="button" name="seusPedidos" id="seusPedidos" tabindex="4"
+                                                class="form-control btn btn-login" value="Seus Pedidos">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-8 col-sm-offset-2">
+                                            
+											<input type="submit" value='SAIR' class="form-control btn btn-login">
+                                        </div>
+                                    </div>
+                                </div>
 
 								
 								</form>
