@@ -1,8 +1,6 @@
 <?php
 
 require_once("conexao.php");
-$arrayCampo = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-var_dump($arrayCampo);
 
 
 
@@ -22,11 +20,16 @@ $razao = $_POST['razao'];
 if($senha == $confSenha){
 
 
-    $sql = "insert into instituicoes values(null, '".$arrayCampo['username']."', '".$email."', '".$senha."', ".$cnpj.", '".$rua."', ".$cep.", '".$cidade."', '".$estado."', '".$telefone."','".$razao. "')";
+    $sql = "insert into instituicoes values(null, '".$nome."', '".$email."', '".$senha."', ".$cnpj.", '".$rua."', ".$cep.", '".$cidade."', '".$estado."', '".$telefone."','".$razao. "')";
     
     $salvar = mysqli_query($conexao, $sql);
+<<<<<<< HEAD
     header('location: LoginCadastro.php?cadastrado=true');   
     exit;
+=======
+    
+    header("location: LoginCadastro.php");
+>>>>>>> 69d7abd42b3dc5e345378bb669d0e6083b859523
 
 }else{
     header('location: LoginCadastro.php');   
