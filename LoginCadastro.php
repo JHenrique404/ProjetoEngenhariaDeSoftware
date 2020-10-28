@@ -166,7 +166,7 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="login-form" action="login2.php" method="post"
+								<form id="login-form" action="login.php" method="post"
 									role="form" style="display: block;">
 									<div class="form-group">
 										<input type="text" name="username" id="username" tabindex="1"
@@ -294,7 +294,10 @@
 				$(this).addClass('active');
 				e.preventDefault();
 			});
+			if(location.search.includes("cadastrado")){
+				alert('Usuario Cadastrado com Sucesso');
 
+			}
 		});
 
 	</script>

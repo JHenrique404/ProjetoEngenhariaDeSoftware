@@ -25,9 +25,11 @@ if($senha == $confSenha){
     $sql = "insert into instituicoes values(null, '".$arrayCampo['username']."', '".$email."', '".$senha."', ".$cnpj.", '".$rua."', ".$cep.", '".$cidade."', '".$estado."', '".$telefone."','".$razao. "')";
     
     $salvar = mysqli_query($conexao, $sql);
+    header('location: LoginCadastro.php?cadastrado=true');   
+    exit;
 
 }else{
-    header('location: LoginCadastro.html');   
+    header('location: LoginCadastro.php');   
     exit;
 }
 
