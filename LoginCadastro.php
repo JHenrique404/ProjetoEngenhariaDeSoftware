@@ -135,7 +135,7 @@
 
 	body{
 
-	background-image:url('images/hero_1.jpg');
+	background-image:url('images/hero_2.jpg');
 	background-size: cover;
 	}
 
@@ -265,20 +265,28 @@
 		$(function () {
 						console.log(location.search);
 						debugger;
-			if(location.search.includes("cad")){
+			if(location.search.includes("log") ){
+				$('#register-form-link').removeClass('active');
+				$('#register-form').hide();
+				$('#login-form-link').addClass('active');
+				$('#login-form').show();
 
+			}else if(location.search.includes("cadastrado")){
+				$('#register-form-link').removeClass('active');
+				$('#register-form').hide();
+				$('#login-form-link').addClass('active');
+				$('#login-form').show();
+
+				alert('Usuario Cadastrado com Sucesso');
+			}
+			else{
 				$('#login-form-link').removeClass('active');
 				$('#login-form').hide();
 				$('#register-form-link').addClass('active');
 				$('#register-form').show();
 			}
-			else{
-				$('#register-form-link').removeClass('active');
-				$('#register-form').hide();
-				$('#login-form-link').addClass('active');
-				$('#login-form').show();
-			}
 
+			
 			$('#login-form-link').click(function (e) {
 				$("#login-form").delay(100).fadeIn(100);
 				$("#register-form").fadeOut(100);
@@ -294,10 +302,6 @@
 				$(this).addClass('active');
 				e.preventDefault();
 			});
-			if(location.search.includes("cadastrado")){
-				alert('Usuario Cadastrado com Sucesso');
-
-			}
 		});
 
 	</script>

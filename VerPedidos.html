@@ -131,7 +131,7 @@
 
 	body{
 
-	background-image:url('images/hero_1.jpg');
+	background-image:url('images/hero_2.jpg');
 	background-size: cover;
 	}
 
